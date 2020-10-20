@@ -1,0 +1,5 @@
+Credentials cache: API:370A7E41-52E9-44FA-B3C6-921345CD75A4
+        Principal: egrazina@42LISBOA.COM
+
+  Issued                Expires               Principal
+Oct 19 14:53:05 2020  Oct 20 00:53:05 2020  krbtgt/42LISBOA.COM@42LISBOA.COM
