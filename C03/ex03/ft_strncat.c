@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egrazina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 21:48:07 by egrazina          #+#    #+#             */
-/*   Updated: 2020/10/29 21:48:09 by egrazina         ###   ########.fr       */
+/*   Created: 2020/11/01 22:38:01 by egrazina          #+#    #+#             */
+/*   Updated: 2020/11/01 22:38:03 by egrazina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int i;
-	
+	unsigned int h;
+
 	i = 0;
-	while (s1[i] != '\0' && s1[i] == s2[i])
+	h = 0;
+	while (dest[i] != '\0')
 		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	while (src[h] && h < nb)
+	{
+		dest[i] = src[h];
+		h++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+int main()
+{
+	char src[7] = "sdadsad";
+	char dest[3] = "ola";
+
+	printf("%s", ft_strncat(dest, src, 2));
+	
+	return (0);
 }

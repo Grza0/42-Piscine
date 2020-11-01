@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(char *s1,char *s2, unsigned int n)
 {
-	unsigned char i;
-
-	i = 0;
-	while(s1[i] == s2[i] && s1[i] != '\0' && i < n)
-		i++;
-	return(s1[i] - s2[i]);
+	if (n == 0)
+		return (0);
+	do {
+		if (*s1 != *s2++)
+			return (*(unsigned char *)s1 - *(unsigned char *)--s2);
+		if (*s1++ == 0)
+			break;
+	} while (--n != 0);
+	return (0);
 }
